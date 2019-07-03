@@ -25,14 +25,14 @@ body {
 }
 
 #doctor {
-    width: 85%;
+    width: 80%;
     display: flex;
     padding-left: 1%;
     color: #6F7171; 
 }
 
 #headerTime {
-    widows: 50%;
+    width:15%;
     display: flex;
 }
 
@@ -54,10 +54,12 @@ body {
     width: 80vw;
     color: #6F7171;
     margin: 0;
+    padding-left: 0.5%;
     
 }
 
 .rowSpacing {
+
     display: flex;
     width: 25%;
 }

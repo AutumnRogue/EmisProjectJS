@@ -8,8 +8,8 @@ let notesInput
 headerTime.addEventListener('keypress',(e)=>{
     if(e.code === 'Enter'){
     minutes = Number(document.getElementById('headerTime').value)
-    console.log(minutes)
-    headerTime.innerHTML = ''
+
+    //forloop to pop goes here
 
    makeGrid()
 
