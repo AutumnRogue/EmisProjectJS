@@ -12,11 +12,16 @@
     <div id='hContainer'>
             <div id='header'>
                 <p id='doctor'> Dr Luke</p>
-            <input type='text' id='headerTime' placeholder="Adjust Slot Times "></input>
+            <select type='number' id='headerTime' placeholder="Adjust Slot Times ">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
             </div>
     </div>
 
-    <div id='container'>
+    <div id='container'> 
             <div>
                 <div class = 'rowClass'>
                     <div class ='rowSpacing'>Time:</div>
@@ -27,7 +32,22 @@
             </div>
             <div id="myGrid""></div>
     </div>
+
     
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <input type="text" id='firstname' placeholder="first name">
+    <input type="text" id='surname' placeholder="surname">
+    <input type="text" id='reason' placeholder="reason">
+    <input type="text" id='notes' placeholder="notes">
+    <button type ='submit' value='submit' id='submitButton'>submit</button>
+  </div>
+
+</div>
     
    
 </body>

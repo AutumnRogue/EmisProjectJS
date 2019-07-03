@@ -7,7 +7,7 @@ body {
 
 #hContainer {
     display: flex;
-    height: 7vh;
+    height: 6.1vh;
     width: 100vw;
     background-color: cyan;
     justify-content: center;
@@ -40,7 +40,7 @@ body {
     display: flex;
     height: 90vh;
     width: 100vw;
-    background-color: bisque;
+    background-color: cyan;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
@@ -54,7 +54,7 @@ body {
     width: 80vw;
     color: #6F7171;
     margin: 0;
-    padding-left: 0.5%;
+    /* padding-left: 0.5%; */
     
 }
 
@@ -62,8 +62,48 @@ body {
 
     display: flex;
     width: 25%;
+    border-right: 1px solid #BDC3C8;
 }
 /* 
 background-color: #F5F7F7;
 border: 1px solid #BDC3C8;
 color: #6F7171; */
+
+/* The Modal (background) */
+.modal {
+    /* display: block; Hidden by default */
+    visibility: hidden;
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
