@@ -21,7 +21,7 @@ headerTime.addEventListener('keypress',(e)=>{
 
 }});
 
-function createRow({id, firstname, surname, reason, notes}) {
+let createRow = ({id, firstname, surname, reason, notes}) => {
     let timeRow = document.createElement('div')
     timeRow.innerHTML = id
     timeRow.className = 'rowSpacing'
@@ -49,9 +49,9 @@ function createRow({id, firstname, surname, reason, notes}) {
 }
 
 const makeGrid=()=>{
-   
-for(i=9;i<17;i++){
+   for(i=9;i<17;i++){
     for(h=0;h<60;h+=minutes){
+        // adds 00 instead of 0
         if(h==0){
             h='00'
         } else if(h==5){
@@ -62,21 +62,12 @@ for(i=9;i<17;i++){
         let div = document.createElement("div")
         div.id = `${i}:${h}`
         //popup command 
-
-        try {
-            div.ondblclick = thing
-
-        } catch(e) {
-            console.log('adhgsauhj')
-        }
-            
-
-
+        div.ondblclick = inputData
+        // ^^^^^^^^^    
         div.appendChild(row)
         document.getElementById("myGrid").appendChild(div)
-        // row.id= `row${i}`
         rowData.push(row)
-        // console.log("working")
+        //adds 05 instead of 5
         if(h=='00'){
             h=0
         }else if(h=='05'){
@@ -87,19 +78,13 @@ for(i=9;i<17;i++){
 }
 }
 
-
-
 span.onclick = function() {
     modal.style.visibility = "hidden";
   }
 
-
-
-  
-
-
-  function thing() {
-      
+  let inputData=() => {
+       
+    // this = this.element
   
               document.getElementById('myModal').style.visibility = 'visible'
               
@@ -127,15 +112,5 @@ span.onclick = function() {
                   
                 //   `<div class="rowClass"><div class="rowSpacing">${id}</div><div class="rowSpacing">${firstname.value + ' ' + surname.value}</div><div class="rowSpacing">${reason.value}</div><div class="rowSpacing">${notes.value}</div></div>`
   
-                //   firstname.value = ''
-                //   surname.value = ''
-                //   reason.value = ''
-                //   notes.value = ''
-              //   console.log(div.id)
             
           }
-
-
-//   let updateGrid = () => {
-
-//   }
