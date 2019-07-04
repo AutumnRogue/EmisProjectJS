@@ -18,6 +18,35 @@ headerTime.addEventListener('keypress',(e)=>{
 
 }});
 
+// ///Context Menu//////
+
+const contextMenu = document.querySelector(".contextMenu")
+
+const showContextMenu=(show = true)=>{
+ contextMenu.style.display = show ? 'block' : 'none';
+}
+
+window.addEventListener("contextmenu", (e)=>{
+    e.preventDefault();
+    // console.log("right")
+    showContextMenu()
+    console.log(e.y , e.x)
+    console.log(this)
+    contextMenu.style.top = e.clientY + "px"  +contextMenu.offsetHeight > window.innerHeight ?window.innerHeight - contextMenu.offsetHeight : e.y + "px";
+    contextMenu.style.left = e.clientX + "px" +contextMenu.offsetWidth > window.innerWidth ? window.innerWidth - contextMenu.offsetWidth : e.x + "px"; 
+})
+
+window.addEventListener('click', ()=>{
+    showContextMenu(false)
+})
+
+const cancelItem = document.getElementById("cancelItem")
+
+cancelItem.addEventListener("click", ()=>{
+    //Delete info in selected div
+})
+
+
 
 const makeGrid=()=>{
    

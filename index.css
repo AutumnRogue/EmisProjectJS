@@ -40,7 +40,7 @@ body {
     display: flex;
     height: 90vh;
     width: 100vw;
-    background-color: cyan;
+    background-color: blanchedalmond;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
@@ -107,3 +107,26 @@ color: #6F7171; */
     text-decoration: none;
     cursor: pointer;
   }
+
+/* Context Menu */
+.contextMenu{
+    background-color: white;
+    border: 1px solid #cccccc;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    left:0;
+    display: none;
+}
+
+.menuItem{
+    cursor: pointer;
+    padding:8px 15px;
+    height: 5%;
+}
+
+.menuItem:hover{
+    background: #f8f8f8
+}
