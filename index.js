@@ -6,6 +6,9 @@ let nameInput = ''
 let reasonInput = ''
 let notesInput = ''
 
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
 headerTime.addEventListener('keypress',(e)=>{
     if(e.code === 'Enter'){
     minutes = Number(document.getElementById('headerTime').value)
@@ -18,6 +21,32 @@ headerTime.addEventListener('keypress',(e)=>{
 
 }});
 
+function createRow({id, firstname, surname, reason, notes}) {
+    let timeRow = document.createElement('div')
+    timeRow.innerHTML = id
+    timeRow.className = 'rowSpacing'
+    let nameRow = document.createElement('div')
+    nameRow.innerHTML = `${firstname+' '+surname}`
+    nameRow.className ='rowSpacing'
+ //    nameRow.id = `nameRowID${i}${h}`
+    let reasonRow = document.createElement('div')
+    reasonRow.innerHTML = `${reason}`
+    reasonRow.className = 'rowSpacing'
+ //    reasonRow.id = `reasonRowID${i}${h}`
+    let notesRow = document.createElement('div')
+    notesRow.innerHTML = `${notes}` 
+    notesRow.className = 'rowSpacing' 
+ //    notesRow.id = `notesRowID${i}${h}`
+     let row = document.createElement('div')
+     row.className = "rowClass"
+
+     
+     row.appendChild(timeRow)
+     row.appendChild(nameRow)
+     row.appendChild(reasonRow)
+     row.appendChild(notesRow)
+     return row
+}
 
 const makeGrid=()=>{
    
@@ -28,65 +57,19 @@ for(i=9;i<17;i++){
         } else if(h==5){
             h='05'
         }
-       let timeRow = document.createElement('div')
-       timeRow.innerHTML = `${i+':'+h}`
-       timeRow.className = 'rowSpacing'
-       let nameRow = document.createElement('div')
-       nameRow.innerHTML = `${nameInput}`
-       nameRow.className ='rowSpacing'
-    //    nameRow.id = `nameRowID${i}${h}`
-       let reasonRow = document.createElement('div')
-       reasonRow.innerHTML = `${reasonInput}`
-       reasonRow.className = 'rowSpacing'
-    //    reasonRow.id = `reasonRowID${i}${h}`
-       let notesRow = document.createElement('div')
-       notesRow.innerHTML = `${notesInput}` 
-       notesRow.className = 'rowSpacing' 
-    //    notesRow.id = `notesRowID${i}${h}`
-        let row = document.createElement('div')
-        row.className = "rowClass"
-        row.appendChild(timeRow)
-        row.appendChild(nameRow)
-        row.appendChild(reasonRow)
-        row.appendChild(notesRow)
+        let row = createRow({id: `${i+':'+h}`, firstname: '', surname: '', reason: '', notes: ''});
+   
         let div = document.createElement("div")
         div.id = `${i}:${h}`
         //popup command 
-        div.ondblclick = () => {
-            console.log(div)
-            document.getElementById('myModal').style.visibility = 'visible'
-            
 
-            document.getElementById('submitButton').addEventListener('click',()=>{
-                console.log('test')
-                modal.style.visibility = "hidden"
-                let firstname = document.getElementById('firstname').value
-                let surname = document.getElementById('surname').value
-                let reason = document.getElementById('reason').value
-                let notes = document.getElementById('notes').value
+        try {
+            div.ondblclick = thing
 
-                // console.log(div.innerHTML)
-
-              
-                
-
-                // document.getElementById(`nameRowID${i}${h}`).innerHTML = `${surname},${firstname}`
-                // document.getElementById(`reasonRowID${i}${h}`).innerHTML = reason
-                // document.getElementById(`notesRowID${i}${h}`).innerHTML = notes
-
-                div.innerHTML = `<div class="rowClass"><div class="rowSpacing">${div.id}</div><div class="rowSpacing">${firstname + ' ' + surname}</div><div class="rowSpacing">${reason}</div><div class="rowSpacing">${notes}</div></div>`
-
-                firstname.value = ''
-                surname.value = ''
-                reason.value = ''
-                notes.value = ''
-            //   console.log(div.id)
-            })
-          
-
-
-
+        } catch(e) {
+            console.log('adhgsauhj')
         }
+            
 
 
         div.appendChild(row)
@@ -104,14 +87,55 @@ for(i=9;i<17;i++){
 }
 }
 
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
+
+
 span.onclick = function() {
     modal.style.visibility = "hidden";
   }
 
 
 
-  let updateGrid = () => {
+  
 
-  }
+
+  function thing() {
+      
+  
+              document.getElementById('myModal').style.visibility = 'visible'
+              
+  
+              document.getElementById('submitButton').addEventListener('click',()=>{
+                  modal.style.visibility = "hidden"
+                  let firstname = document.getElementById('firstname')
+                  let surname = document.getElementById('surname')
+                  let reason = document.getElementById('reason')
+                  let notes = document.getElementById('notes')
+  
+                let id = this.id
+
+                let el = createRow({id, firstname:firstname.value, surname:surname.value, reason: reason.value, notes: notes.value })
+
+                  
+                this.parentNode.replaceChild(el, this);
+              })
+
+             
+              
+              
+
+                  
+                  
+                //   `<div class="rowClass"><div class="rowSpacing">${id}</div><div class="rowSpacing">${firstname.value + ' ' + surname.value}</div><div class="rowSpacing">${reason.value}</div><div class="rowSpacing">${notes.value}</div></div>`
+  
+                //   firstname.value = ''
+                //   surname.value = ''
+                //   reason.value = ''
+                //   notes.value = ''
+              //   console.log(div.id)
+            
+          }
+
+
+//   let updateGrid = () => {
+
+//   }
