@@ -3,23 +3,25 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif
 }
 
 #hContainer {
     display: flex;
-    height: 6.1vh;
+    height: 5vh;
     width: 100vw;
-    background-color: cyan;
+    background-color: white;
     justify-content: center;
 }
 
 #header {
     display: flex;
-    height: 5vh;
+    height: 3vh;
     width: 80vw;
-    background-color: #F5F7F7;
+    background-color: blue;
     border: 1px solid #BDC3C8;
-    margin-top: 1vh;
+    margin-top: 1.8vh;
     /* justify-content: center; */
     align-items: center;
 }
@@ -27,8 +29,10 @@ body {
 #doctor {
     width: 80%;
     display: flex;
-    padding-left: 1%;
-    color: #6F7171; 
+    padding-left: 10vh;
+    color: white; 
+    font-size: 14pt;
+    text-decoration: none
 }
 
 #headerTime {
@@ -38,62 +42,76 @@ body {
 
 #container {
     display: flex;
-    height: 90vh;
+    height: 95vh;
     width: 100vw;
-    background-color: cyan;
+    background-color: white;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
+    overflow-y: scroll;
+    text-align: center
 }
 
 .rowClass {
     display: flex;
-    background-color: #F5F7F7;
+    background-color: #fefefe;
     border: 1px solid #BDC3C8;
-    margin-top: 1vh;
+    margin-top: 0vh;
+    padding: 0vh;
     width: 80vw;
     color: #6F7171;
-    margin: 0;
+    font-size: 12pt;
+    font-family: 'Times New Roman', Times, serif;
     /* padding-left: 0.5%; */
     
+}
+
+.rowClass:active {
+
+    background-color: blue
+
 }
 
 .rowSpacing {
 
     display: flex;
     width: 25%;
-    border-right: 1px solid #BDC3C8;
+    border-right: 1px solid #aaa;
+    height: 3vh;
+    font-size: 12pt;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center
 }
-/* 
-background-color: #F5F7F7;
-border: 1px solid #BDC3C8;
-color: #6F7171; */
 
-/* The Modal (background) */
+
 .modal {
-    /* display: block; Hidden by default */
+   
     visibility: hidden;
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: absolute;
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    /* background-color: rgba(0,0,0,0.4); */
   }
   
-  /* Modal Content/Box */
+  
   .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    background-color: grey;
+    height: 15%;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 15%; 
+    position: absolute;
+    border-radius: 5%;
+    left: 42.5%;
+    top: 42.5%;
+    font-size: 12pt
+
   }
   
-  /* The Close Button */
+ 
   .close {
     color: #aaa;
     float: right;
